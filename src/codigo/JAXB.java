@@ -27,7 +27,7 @@ public class JAXB {
             misLibros = (Libros)u.unmarshal(fichero);
             return 0;
         } catch (Exception e) {
-            return -1;
+            return 1;
         }
     }
     public String recorrerJAXByMostrar(){
@@ -42,5 +42,7 @@ public class JAXB {
         }
         return cadena_resultado;
     }
+    
+    
     
 }

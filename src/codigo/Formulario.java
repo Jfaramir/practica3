@@ -194,7 +194,7 @@ public class Formulario extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         gesDOM.añadirDOM(jTextField1.getText(), jTextField2.getText(), jTextField3.getText());
-        gesDOM.procesarLibro(n);
+        
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
