@@ -5,9 +5,10 @@
  */
 package codigo;
 
-import generated.Libros;
-import java.awt.List;
+import javalibros.Libros;
+
 import java.io.File;
+import java.util.List;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Unmarshaller;
 
@@ -17,7 +18,9 @@ import javax.xml.bind.Unmarshaller;
  */
 public class JAXB {
     
-    public int  abrir_XML_JAXB(File fichero, Libros misLibros){
+    Libros misLibros;
+    
+    public int  abrir_XML_JAXB(File fichero){
         JAXBContext contexto;
         try {
             contexto = JAXBContext.newInstance(Libros.class);
@@ -35,7 +38,7 @@ public class JAXB {
         String cadena_resultado = "";
         
         List<Libros.Libro> lLibros = misLibros.getLibro();
-        for(int i=0; i<Libros.size();i++){
+        for(int i=0; i<lLibros.size();i++){
             cadena_resultado = cadena_resultado + "\n" + "Publicado en: " + lLibros.get(i).getPublicadoEn();
             cadena_resultado = cadena_resultado + "\n" + "El titulo es: " + lLibros.get(i).getTitulo();
             cadena_resultado = cadena_resultado + "\n" + "El autor es: " + lLibros.get(i).getAutor();
