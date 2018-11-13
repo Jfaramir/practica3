@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Libros xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="LibrosEsquema.xsd">
+    <Libro publicado_en="1840">
+        <Titulo>El capote</Titulo>
+        <Autor>Nikolai Gogol</Autor>
+    </Libro>
+    <Libro publicado_en="2008">
+        <Titulo>El sanador de caballos</Titulo>
+        <Autor>Gonzalo Giner</Autor>
+    </Libro>
+    <Libro publicado_en="1981">
+        <Titulo>El nombre de la rosa</Titulo>
+        <Autor>Uberto Eco</Autor>
+    </Libro>
+    <libro Publicado_en:="">
+        <titulo/>
+        <Autor/>
+    </libro>
+    <libro Publicado_en:="q">
+        <titulo>q</titulo>
+        <Autor>q</Autor>
+    </libro>
+</Libros>

@@ -83,6 +83,29 @@ public class DOM {
         return datos;
     }
     
+    public int guardarDOMcomoFile(){
+        try {
+            File archivo_xml = new File("modificacion.xml");
+            System.out.println("1");
+            OutputFormat format = new OutputFormat(doc);
+            System.out.println("2");
+            format.setIndenting(true);
+            System.out.println("3");
+            XMLSerializer serializer = new XMLSerializer(new FileOutputStream("archivo.xml"), format);
+            System.out.println("4");
+            serializer.serialize(doc);
+            System.out.println("5");
+            System.out.println(archivo_xml.toString()); 
+            return 0;
+            
+            //http://www.latascadexela.es/2008/07/java-y-xml-dom-ii.html
+            
+        } catch (Exception e) {
+            return -1;
+        }
+    }
+        
+    
     public int añadirDOM(String titulo, String Autor, String anno){
         try {
             Node ntitulo = doc.createElement("titulo");
@@ -108,22 +131,5 @@ public class DOM {
         }
     } 
     
-    public int guardarDOMcomoFile(){
-        try {
-            File archivo_xml = new File("salida.xml");
-            OutputFormat format = new OutputFormat(doc);
-            
-            format.setIndenting(true);
-            
-            XMLSerializer serializer = new XMLSerializer(new FileOutputStream("archivo.xml"), format);
-            
-            serializer.serialize(doc);
-            
-            return 0;
-            
-        } catch (Exception e) {
-            return -1;
-        }
-    }
-            
+        
 }
