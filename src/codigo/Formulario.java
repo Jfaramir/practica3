@@ -244,12 +244,18 @@ public class Formulario extends javax.swing.JFrame {
         jAbrirSAXActionPerformed();
         jTextPane1.setText(gesSAX.recorrerSax());
         jLabel4.setText("HAS ABIERTO SAX");
+        jButton1.setEnabled(false);
+       jButton2.setEnabled(false);
+       jButton3.setEnabled(false);
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
         jAbrirJAXBActionPerformed();
         jTextPane1.setText(gesJAXB.recorrerJAXByMostrar());
         jLabel4.setText("HAS ABIERTO JAXB");
+        jButton1.setEnabled(false);
+       jButton2.setEnabled(false);
+       jButton3.setEnabled(false);
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     /**

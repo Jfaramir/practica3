@@ -91,7 +91,7 @@ public class DOM {
             System.out.println("2");
             format.setIndenting(true);
             System.out.println("3");
-            XMLSerializer serializer = new XMLSerializer(new FileOutputStream("archivo.xml"), format);
+            XMLSerializer serializer = new XMLSerializer(new FileOutputStream("modificacion.xml"), format);
             System.out.println("4");
             serializer.serialize(doc);
             System.out.println("5");

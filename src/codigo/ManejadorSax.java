@@ -117,13 +117,5 @@ public class ManejadorSax extends DefaultHandler{
         }
         
     }
-     public String recorrerTodaviaMas (){
-         try {
-             parser.parse(fichero, sh);
-             return sh.cadena_resultado2;
-         } catch (Exception e) {
-             e.printStackTrace();
-         }
-         return sh.cadena_resultado2;
-     }
+   
 }
