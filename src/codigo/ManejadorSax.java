@@ -29,6 +29,7 @@ public class ManejadorSax extends DefaultHandler{
     
     int ultimoelement;
     String cadena_resultado = "";
+    String cadena_resultado2 = "";
     
     File fichero = null;
     
@@ -61,7 +62,11 @@ public class ManejadorSax extends DefaultHandler{
     
     
     @Override public void startElement(String uri, String localName, String qName, Attributes atts)throws SAXException{
-        if(qName.equals("Libro")){
+        if (qName.equals("Libros")){
+            ultimoelement = 4;
+            cadena_resultado = cadena_resultado + "" ;
+        }
+        else if(qName.equals("Libro")){
             cadena_resultado = cadena_resultado + "\nPublicado en: " + atts.getValue(atts.getQName(0))+"\n";
             ultimoelement = 1;
         }
@@ -73,6 +78,7 @@ public class ManejadorSax extends DefaultHandler{
             ultimoelement = 3;
             cadena_resultado = cadena_resultado + "\nEl Autor es:" ;
         }
+        
     }
     
     @Override public void endElement(String uri, String localName, String qName) throws SAXException{
@@ -109,4 +115,13 @@ public class ManejadorSax extends DefaultHandler{
         }
         
     }
+     public String recorrerTodaviaMas (){
+         try {
+             parser.parse(fichero, sh);
+             return sh.cadena_resultado2;
+         } catch (Exception e) {
+             e.printStackTrace();
+         }
+         return sh.cadena_resultado2;
+     }
 }

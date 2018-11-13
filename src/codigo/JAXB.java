@@ -42,8 +42,10 @@ public class JAXB {
             cadena_resultado = cadena_resultado + "\n" + "Publicado en: " + lLibros.get(i).getPublicadoEn();
             cadena_resultado = cadena_resultado + "\n" + "El titulo es: " + lLibros.get(i).getTitulo();
             cadena_resultado = cadena_resultado + "\n" + "El autor es: " + lLibros.get(i).getAutor();
+            cadena_resultado = cadena_resultado + "\n" + "----------------------";
         }
         return cadena_resultado;
+        
     }
     
     
