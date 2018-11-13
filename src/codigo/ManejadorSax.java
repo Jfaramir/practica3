@@ -64,7 +64,9 @@ public class ManejadorSax extends DefaultHandler{
     @Override public void startElement(String uri, String localName, String qName, Attributes atts)throws SAXException{
         if (qName.equals("Libros")){
             ultimoelement = 4;
-            cadena_resultado = cadena_resultado + "" ;
+            cadena_resultado = cadena_resultado + "Se van a mostrar los libros de este documento \n" ;
+            cadena_resultado = cadena_resultado + "-----------------------------------------------";
+
         }
         else if(qName.equals("Libro")){
             cadena_resultado = cadena_resultado + "\nPublicado en: " + atts.getValue(atts.getQName(0))+"\n";
@@ -84,7 +86,7 @@ public class ManejadorSax extends DefaultHandler{
     @Override public void endElement(String uri, String localName, String qName) throws SAXException{
         if(qName.equals("Libro")){
             System.out.println("He encontrado el final de un elemento.");
-            cadena_resultado = cadena_resultado + "\n----------------------";
+            cadena_resultado = cadena_resultado + "-----------------------------------------------";
         }
     }
     
