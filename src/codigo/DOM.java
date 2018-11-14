@@ -103,7 +103,7 @@ public class DOM {
     
     public int añadirDOM(String titulo, String Autor, String año){
         try {
-            Node ntitulo = doc.createElement("titulo");
+            Node ntitulo = doc.createElement("Titulo");
             Node ntitulo_text = doc.createTextNode(titulo);
             ntitulo.appendChild(ntitulo_text);
             
@@ -111,7 +111,7 @@ public class DOM {
             Node nAutor_text = doc.createTextNode(Autor);
             nAutor.appendChild(nAutor_text);
             
-            Node nLibro = doc.createElement("libro");
+            Node nLibro = doc.createElement("Libro");
             ((Element)nLibro).setAttribute("Publicado_en:", año);
             nLibro.appendChild(ntitulo);
             nLibro.appendChild(nAutor);
