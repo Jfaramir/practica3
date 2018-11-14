@@ -243,6 +243,9 @@ public class Formulario extends javax.swing.JFrame {
        jTextPane1.setText(gesDOM.recorrerDOMyMostrar());
        jLabel4.setText("HAS ABIERTO DOM");
        jTextPane1.setEditable(false);
+       jTextField1.setEditable(true);
+       jTextField2.setEditable(true);
+       jTextField3.setEditable(true);
        jButton1.setEnabled(true);
        jButton2.setEnabled(true);
        jButton3.setEnabled(true);
