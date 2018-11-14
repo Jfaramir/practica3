@@ -39,11 +39,11 @@ public class JAXB {
         
         List<Libros.Libro> lLibros = misLibros.getLibro();
         for(int i=0; i<lLibros.size();i++){
-            cadena_resultado = cadena_resultado + "\n" + "Publicado en: " + lLibros.get(i).getPublicadoEn();
+            cadena_resultado = cadena_resultado + "Publicado en: " + lLibros.get(i).getPublicadoEn();
             cadena_resultado = cadena_resultado + "\n" + "El titulo es: " + lLibros.get(i).getTitulo();
             cadena_resultado = cadena_resultado + "\n" + "El autor es: " + lLibros.get(i).getAutor();
             cadena_resultado = cadena_resultado + "\n" + "La editorial es: " + lLibros.get(i).getEditorial();
-            cadena_resultado = cadena_resultado + "\n" + "----------------------";
+            cadena_resultado = cadena_resultado + "\n" + "----------------------" + "\n";
         }
         return cadena_resultado;
         

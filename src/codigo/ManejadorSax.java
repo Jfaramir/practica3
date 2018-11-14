@@ -65,7 +65,7 @@ public class ManejadorSax extends DefaultHandler{
         if (qName.equals("Libros")){
             ultimoelement = 4;
             cadena_resultado = cadena_resultado + "Se van a mostrar los libros de este documento \n" ;
-            cadena_resultado = cadena_resultado + "-----------------------------------------------";
+            cadena_resultado = cadena_resultado + "-------------------------------------------------------------------";
 
         }
         else if(qName.equals("Libro")){
@@ -86,7 +86,7 @@ public class ManejadorSax extends DefaultHandler{
     @Override public void endElement(String uri, String localName, String qName) throws SAXException{
         if(qName.equals("Libro")){
             System.out.println("He encontrado el final de un elemento.");
-            cadena_resultado = cadena_resultado + "-----------------------------------------------";
+            cadena_resultado = cadena_resultado + "-------------------------------------------------------------------";
         }
     }
     
