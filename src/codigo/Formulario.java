@@ -235,9 +235,11 @@ public class Formulario extends javax.swing.JFrame {
        jAbrirDOMActionPerformed();
        jTextPane1.setText(gesDOM.recorrerDOMyMostrar());
        jLabel4.setText("HAS ABIERTO DOM");
+       jTextPane1.setEditable(false);
        jButton1.setEnabled(true);
        jButton2.setEnabled(true);
        jButton3.setEnabled(true);
+       
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
@@ -245,17 +247,25 @@ public class Formulario extends javax.swing.JFrame {
         jTextPane1.setText(gesSAX.recorrerSax());
         jLabel4.setText("HAS ABIERTO SAX");
         jButton1.setEnabled(false);
-       jButton2.setEnabled(false);
-       jButton3.setEnabled(false);
+        jButton2.setEnabled(false);
+        jButton3.setEnabled(false);
+        jTextPane1.setEditable(false);
+        jTextField1.setEditable(false);
+        jTextField2.setEditable(false);
+        jTextField3.setEditable(false);
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
         jAbrirJAXBActionPerformed();
         jTextPane1.setText(gesJAXB.recorrerJAXByMostrar());
         jLabel4.setText("HAS ABIERTO JAXB");
+        jTextPane1.setEditable(false);
         jButton1.setEnabled(false);
-       jButton2.setEnabled(false);
-       jButton3.setEnabled(false);
+        jButton2.setEnabled(false);
+        jButton3.setEnabled(false);
+        jTextField1.setEditable(false);
+        jTextField2.setEditable(false);
+        jTextField3.setEditable(false);
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     /**

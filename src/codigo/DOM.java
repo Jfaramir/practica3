@@ -85,20 +85,15 @@ public class DOM {
     
     public int guardarDOMcomoFile(){
         try {
-            File archivo_xml = new File("modificacion.xml");
-            System.out.println("1");
+
+            File archivo_xml = new File("salida.xml");
             OutputFormat format = new OutputFormat(doc);
-            System.out.println("2");
             format.setIndenting(true);
-            System.out.println("3");
             XMLSerializer serializer = new XMLSerializer(new FileOutputStream("modificacion.xml"), format);
-            System.out.println("4");
             serializer.serialize(doc);
-            System.out.println("5");
-            System.out.println(archivo_xml.toString()); 
-            return 0;
             
-            //http://www.latascadexela.es/2008/07/java-y-xml-dom-ii.html
+
+            return 0;
             
         } catch (Exception e) {
             return -1;
@@ -106,7 +101,7 @@ public class DOM {
     }
         
     
-    public int añadirDOM(String titulo, String Autor, String anno){
+    public int añadirDOM(String titulo, String Autor, String año){
         try {
             Node ntitulo = doc.createElement("titulo");
             Node ntitulo_text = doc.createTextNode(titulo);
@@ -117,7 +112,7 @@ public class DOM {
             nAutor.appendChild(nAutor_text);
             
             Node nLibro = doc.createElement("libro");
-            ((Element)nLibro).setAttribute("Publicado_en:", anno);
+            ((Element)nLibro).setAttribute("Publicado_en:", año);
             nLibro.appendChild(ntitulo);
             nLibro.appendChild(nAutor);
             
