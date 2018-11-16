@@ -18,6 +18,8 @@ public class Formulario extends javax.swing.JFrame {
     DOM gesDOM = new DOM();
     ManejadorSax gesSAX = new ManejadorSax();
     JAXB gesJAXB = new JAXB();
+    File fichero = null;
+    String rutaArchivo = "";
     /**
      * Creates new form Formulario
      */
@@ -25,8 +27,10 @@ public class Formulario extends javax.swing.JFrame {
         initComponents();      
     }
     
+    
+    
     private File dialogoSeleccionTipoRecurso() {
-        File fichero = null;
+        
         int rv;
         JFileChooser fc = new JFileChooser();
         fc.setMultiSelectionEnabled(false);
@@ -39,25 +43,44 @@ public class Formulario extends javax.swing.JFrame {
     }
 
     private void jAbrirDOMActionPerformed() {
-        File fichero = dialogoSeleccionTipoRecurso();
+        dialogoSeleccionTipoRecurso();
         
         gesDOM.abrir_XML_DOM(fichero);
     }
     
     private void jAbrirSAXActionPerformed() {
-        File fichero = dialogoSeleccionTipoRecurso();
+        dialogoSeleccionTipoRecurso();
         
         gesSAX.abrir_XML_SAX(fichero);
         
     }
     private void jAbrirJAXBActionPerformed() {
-        File fichero = dialogoSeleccionTipoRecurso();
+        dialogoSeleccionTipoRecurso();
         
         gesJAXB.abrir_XML_JAXB(fichero);
         
     }
     
 
+    private void jGuardar(){
+        int i;
+        
+        JFileChooser JFC = new JFileChooser();
+        JFC.setDialogType(JFileChooser.SAVE_DIALOG);
+        i = JFC.showSaveDialog(this);
+        
+        try {
+            if(i == JFileChooser.APPROVE_OPTION){
+                fichero = JFC.getSelectedFile();
+                rutaArchivo = fichero.toString();
+                
+                gesDOM.guardarDOMcomoFile(rutaArchivo);
+            }
+        } catch (Exception e) {
+            System.out.println("errorrr");
+        }
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -234,7 +257,7 @@ public class Formulario extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
             
-        gesDOM.guardarDOMcomoFile();
+        jGuardar();
         jLabel4.setText("SE HA GUARDADO CORRECTAMENTE EN LA CARPETA DEL PROYECTO.");
     }//GEN-LAST:event_jButton3ActionPerformed
 

@@ -83,13 +83,13 @@ public class DOM {
         return datos;
     }
     
-    public int guardarDOMcomoFile(){
+    public int guardarDOMcomoFile(String archivo){
         try {
 
-            File archivo_xml = new File("salida.xml");
+            File archivo_xml = new File(archivo);
             OutputFormat format = new OutputFormat(doc);
             format.setIndenting(true);
-            XMLSerializer serializer = new XMLSerializer(new FileOutputStream("modificacion.xml"), format);
+            XMLSerializer serializer = new XMLSerializer(new FileOutputStream(archivo_xml), format);
             serializer.serialize(doc);
             
 
